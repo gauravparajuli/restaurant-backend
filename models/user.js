@@ -11,6 +11,10 @@ const UserSchema = new Schema(
             required: true,
             unique: true,
         },
+        userType: {
+            type: String,
+            enum: ['Manager', 'Waiter', 'Chef'],
+        },
         password: {
             type: String,
             required: true,

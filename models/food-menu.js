@@ -14,7 +14,7 @@ const FoodMenuSchema = new Schema(
             type: Number,
             required: true,
         },
-        foodCategory: {
+        foodCategoryId: {
             type: Schema.Types.ObjectId,
         },
         organizationId: {
