@@ -2,9 +2,12 @@ import { Schema, model } from 'mongoose'
 
 const DepartmentSchema = new Schema(
     {
-        label: {
+        name: {
             type: String,
             required: true,
+        },
+        organizationId: {
+            type: Schema.Types.ObjectId,
         },
     },
     { timestamps: true }

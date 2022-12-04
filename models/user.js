@@ -29,6 +29,9 @@ const UserSchema = new Schema(
         resetTokenValidTill: {
             type: Date,
         },
+        organizationId: {
+            type: Schema.Types.ObjectId,
+        },
     },
     { timestamps: true }
 )
