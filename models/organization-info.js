@@ -1,11 +1,10 @@
 import { Schema, model } from 'mongoose'
 
-const InfoSchema = new Schema(
+const OrganizationInfoSchema = new Schema(
     {
         name: {
             type: String,
             required: true,
-            unique: true,
         },
         address: {
             type: String,
@@ -19,4 +18,4 @@ const InfoSchema = new Schema(
     { timestamps: true }
 )
 
-export default model('Info', InfoSchema)
+export default model('OrganizationInfo', OrganizationInfoSchema)

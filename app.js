@@ -1,23 +1,26 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import { createClient } from 'redis'
-import mongoose from 'mongoose'
 
-const PORT = 3001
-const REDIS_PORT = 6379
+import orgInfoRoutes from './routes/organization-info-routes.js'
 
-// setup and connect to redis
-const redisClient = createClient(REDIS_PORT)
-await redisClient.connect()
+const REDIS_PORT = process.env.REDIS_PORT || 6379
+
+// setup, connect and export redis
+export const redisClient = createClient(REDIS_PORT)
 
 const app = express()
 
 // register middlewares here
-app.use(bodyParser)
+app.use(bodyParser.json())
+
+// register routes here
+app.use('/org', orgInfoRoutes)
 
 // error handling middleware
-app.use((err, req, res, next) => {})
-
-app.listen(PORT, () => {
-    console.log(`Express server running at port:${PORT}`)
+app.use((err, req, res, next) => {
+    res.status(err.statusCode || 500).json(err)
+    next()
 })
+
+export default app
