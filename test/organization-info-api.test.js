@@ -4,14 +4,19 @@ import supertest from 'supertest'
 import app from '../app.js'
 
 describe('test crud api for organization info', () => {
-    beforeEach(async () => {
+    beforeAll(async () => {
         await mongoose.connect(
             'mongodb://localhost:27017/restaurant-backend-test'
         )
     })
 
     afterEach(async () => {
+        await OrganizationInfo.deleteMany({}) // clear the collecion
+    })
+
+    afterAll(async () => {
         await mongoose.connection.db.dropDatabase()
+        await mongoose.connection.close()
     })
 
     test('GET /org/:orgId', async () => {

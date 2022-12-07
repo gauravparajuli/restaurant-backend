@@ -8,9 +8,11 @@ const TableSchema = new Schema(
         },
         departmentId: {
             type: Schema.Types.ObjectId,
+            required: true,
         },
         organizationId: {
             type: Schema.Types.ObjectId,
+            required: true,
         },
     },
     { timestamps: true }

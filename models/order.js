@@ -4,6 +4,7 @@ const OrderSchema = new Schema(
     {
         organizationId: {
             type: Schema.Types.ObjectId,
+            required: true,
         },
         orderItems: [
             {
@@ -17,9 +18,11 @@ const OrderSchema = new Schema(
         ],
         table: {
             type: Schema.Types.ObjectId,
+            required: true,
         },
         orderTotal: {
             type: Number,
+            default: 0,
         },
         isInvoiceGenerated: {
             type: Boolean,
@@ -39,6 +42,7 @@ const OrderSchema = new Schema(
         },
         discountPercentage: {
             type: Number,
+            default: 0,
         },
     },
     { timestamps: true }
