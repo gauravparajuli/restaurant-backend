@@ -6,12 +6,13 @@
     "type": "module",
     "scripts": {
         "start": "nodemon index.js",
-        "test": "jest --watchAll --detectOpenHandles"
+        "test": "jest --detectOpenHandles"
     },
     "jest": {
         "transform": {
             "^.+\\.[t|j]sx?$": "babel-jest"
-        }
+        },
+        "verbose": true
     },
     "author": "",
     "license": "ISC",

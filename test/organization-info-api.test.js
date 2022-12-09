@@ -3,7 +3,7 @@ import OrganizationInfo from '../models/organization-info.js'
 import supertest from 'supertest'
 import app from '../app.js'
 
-describe('test crud api for organization info', () => {
+describe('crud api for organization info', () => {
     beforeAll(async () => {
         await mongoose.connect(
             'mongodb://localhost:27017/restaurant-backend-test'
