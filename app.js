@@ -6,6 +6,7 @@ import orgInfoRoutes from './routes/organization-info-routes.js'
 import departRoutes from './routes/department-routes.js'
 import catRoutes from './routes/food-category-routes.js'
 import tableRoutes from './routes/table-routes.js'
+import foodItemRoutes from './routes/food-item-routes.js'
 
 const REDIS_PORT = process.env.REDIS_PORT || 6379
 
@@ -22,6 +23,7 @@ app.use('/org', orgInfoRoutes)
 app.use('/depart', departRoutes)
 app.use('/cat', catRoutes)
 app.use('/table', tableRoutes)
+app.use('/food', foodItemRoutes)
 
 // error handling middleware
 app.use((err, req, res, next) => {

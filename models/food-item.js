@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose'
 
-const FoodMenuSchema = new Schema(
+const FoodItemSchema = new Schema(
     {
         name: {
             type: String,
@@ -26,4 +26,4 @@ const FoodMenuSchema = new Schema(
     { timestamps: true }
 )
 
-export default model('FoodMenu', FoodMenuSchema)
+export default model('FoodItem', FoodItemSchema)
